@@ -2,7 +2,7 @@
 
 namespace AspNetCoreAPI.Models
 {
-    public class Shoes
+    public class mShoes
     {
         [Key]
         public int Id { get; set; }

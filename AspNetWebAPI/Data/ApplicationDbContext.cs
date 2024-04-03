@@ -12,6 +12,6 @@ namespace AspNetCoreAPI.Data
         {
         }
 
-        public DbSet<Shoes> Shoes { get; set; }
+        public DbSet<mShoes> Shoes { get; set; }
     }
 }
