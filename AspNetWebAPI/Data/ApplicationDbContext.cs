@@ -11,5 +11,7 @@ namespace AspNetCoreAPI.Data
             : base(options)
         {
         }
+
+        public DbSet<Shoes> Shoes { get; set; }
     }
 }
