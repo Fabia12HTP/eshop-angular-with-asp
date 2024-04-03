@@ -1,0 +1,67 @@
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+
+li a {
+  height: 320px;
+  width: 320px;
+  border: 1px solid whitesmoke;
+  border-radius: 16px;
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: red;
+}
+
+/IMAGE/
+.main-image {
+  height: 250px;
+  width: 320px;
+}
+
+/NAME/
+.name {
+  text-align: center;
+}
+
+/LIKE/
+.favourite {
+  display: inline-block;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.favourite:hover {
+  transform: translateY(-5px);
+}
+
+.favourite.clicked {
+  animation: bounceBack 0.7s;
+}
+
+@keyframes bounceBack {
+  0% {
+    transform: translateY(-5px);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+/TEXT-HOVER/
+li a:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}

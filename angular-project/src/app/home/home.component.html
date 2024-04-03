@@ -1,0 +1,21 @@
+<input class="form-control" type="text" placeholder="Search" [(ngModel)]="searchText" />
+
+<div ngIf="shoes">
+  <h1>Shoes</h1>
+  <ul>
+    <lingFor ="let shoe of shoes() | search: searchText">
+      <a>
+        <img class="main-image" [src]="shoe.urlPicture" alt="Shoe-Image" loading="lazy" />
+        <div class="content">
+          <div class="name">
+            {{ shoe.name }}
+          </div>
+          <span class="favourite" (click)="toggleLike(shoe)">
+            {{ shoe.like ? '❤️' : '🖤' }}
+          </span>
+        </div>
+        <p></p>
+      </a>
+      </li>
+  </ul>
+</div>

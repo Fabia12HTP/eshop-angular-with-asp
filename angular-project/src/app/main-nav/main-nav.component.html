@@ -8,3 +8,34 @@
     <button mat-button [routerLink]="['/register']">Registration</button>
   }
 </mat-toolbar>
+
+<!--<header [ngClass]="{ 'dark-mode-header': darkModeState }">
+
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm box-shadow mb-3"
+       [ngClass]="{ 'navbar-light bg-white': !darkModeState, 'navbar-dark': darkModeState }"
+       [style.background-color]="darkModeState ? '#1F1E25' : 'transparent'">
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['/']">E_Shop</a>
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+              aria-label="Toggle navigation"
+              [attr.aria-expanded]="isExpanded"
+              (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+           [ngClass]="{ show: isExpanded }">
+        <ul class="navbar-nav flex-grow">
+          <li class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+          </li>
+        </ul>
+        <app-login-menu></app-login-menu>
+      </div>
+    </div>
+  </nav>
+</header>-->

@@ -11,6 +11,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { errorHandlerInterceptor } from './app/api-authorization/error-handler.interceptor';
 import { authGuard } from './app/api-authorization/auth.guard';
 import { jwtInterceptor } from './app/api-authorization/jwt.interceptor';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { ShoesDetailComponent } from './app/shoes-detail/shoes-detail.component';
 
 export function getBaseUrl() {
   return 'https://localhost:7186/api';
@@ -39,8 +41,9 @@ bootstrapApplication(AppComponent, {
       provideRouter([
         { path: '', component: DashboardComponent, canActivate: [authGuard]},
         { path: 'login', component: LoginComponent},
-        { path: 'register', component: RegistrationComponent}
-      ])
+        { path: 'register', component: RegistrationComponent },
+        { path: 'shoesdetail', component: ShoesDetailComponent }
+      ]), provideAnimationsAsync()
     ]
 })
   .catch(err => console.error(err));
