@@ -4,9 +4,13 @@
     "\\angular-project",
     "\\angular-project\\src",
     "\\angular-project\\src\\app",
+    "\\angular-project\\src\\app\\dark-mode",
+    "\\angular-project\\src\\app\\home",
+    "\\angular-project\\src\\app\\interfaces",
     "\\angular-project\\src\\app\\main-nav",
+    "\\angular-project\\src\\app\\shoes-detail",
     "\\AspNetWebAPI"
   ],
-  "SelectedNode": "\\angular-project\\src\\app\\app.component.css",
+  "SelectedNode": "\\angular-project\\src\\main.ts",
   "PreviewInSolutionExplorer": false
 }
