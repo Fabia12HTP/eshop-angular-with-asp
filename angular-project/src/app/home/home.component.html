@@ -1,9 +1,9 @@
-<input class="form-control" type="text" placeholder="Search" [(ngModel)]="searchText" />
+<input class="form-control" type="text" placeholder="Search" [(ngModel)]="searchText"  />
 
-<div ngIf="shoes">
+<div *NgIf="shoes">
   <h1>Shoes</h1>
   <ul>
-    <lingFor ="let shoe of shoes() | search: searchText">
+    <li *NgFor="let shoe of shoes() | search: searchText">
       <a>
         <img class="main-image" [src]="shoe.urlPicture" alt="Shoe-Image" loading="lazy" />
         <div class="content">
@@ -16,6 +16,6 @@
         </div>
         <p></p>
       </a>
-      </li>
+    </li>
   </ul>
 </div>

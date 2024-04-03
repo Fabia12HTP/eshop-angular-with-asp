@@ -1,15 +1,17 @@
-import { Component, OnDestroy, OnInit, signal } from '@angular/core';
+import { Component, OnDestroy, OnInit, signal, NgModule } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { ShoesService } from './home-service.service'
 import { Shoes } from './../interfaces/shoes-interface';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   standalone: true,
-  imports: []
+  imports: [NgModule, CommonModule, FormsModule]
 })
 export class HomeComponent implements OnInit, OnDestroy {
 

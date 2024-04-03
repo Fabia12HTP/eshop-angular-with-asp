@@ -1,19 +1,29 @@
-﻿using AspNetCoreAPI.Data;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using E_Shop.Services;
+using E_Shop.DTOs;
+using System.Collections.Generic;
+using AspNetCoreAPI.Controllers;
+using AspNetCoreAPI.Data;
 
-namespace AspNetCoreAPI.Controllers
+namespace E_Shop.Controllers
 {
     [ApiController]
-    [Authorize]
     [Route("[controller]")]
     public class HomeController : BaseController
     {
-        public HomeController(ApplicationDbContext context) : base(context)
-        {
-        }
+        private readonly IHomeService _homeService;
+
+        public HomeController(IHomeService homeService, ApplicationDbContext context) : base(context) =>
+            _homeService = homeService;
 
         [HttpGet]
-        public IEnumerable<string> Get() => new List<string> { "Roman", "Martin", "Peter"};
+        public IEnumerable<ShoesDTO> Get() => _homeService.GetShoes();
+
+        [HttpGet("{shoesId:number}")]
+        public ActionResult<ShoesDTO?> Get(int guildId) => GetResponse(_homeService.GetShoesDetail(guildId));
+
+        private ActionResult<ShoesDTO?> GetResponse(ShoesDTO? shoeDetail) =>
+            shoeDetail == null ? NotFound() : Ok(shoeDetail);
+
     }
 }
